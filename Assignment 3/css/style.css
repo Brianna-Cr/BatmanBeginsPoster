@@ -1,0 +1,249 @@
+/**
+                            CSS + Grid:
+**/
+
+
+
+body{               /** Have Poster Image as Background for webpage **/
+    margin: 0;
+    padding: 0;
+    background-image: url("../img/batman_begins.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: contain;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #000000;
+
+}
+h1,h2,h3,h4,h5,h6{          /** Gothic Font for h1-h6 **/
+    text-align: center;
+    font-family: "Gothic A1", sans-serif;
+}
+p,a,li{                     /** Gothic Font for p a li too **/
+    font-family: "Gothic A1", sans-serif;
+    color: #eaeeeb;
+    text-decoration: none;
+    text-align: center;
+}
+p,a{                  /** Have first names be smaller than last name **/
+    font-size: 5px;
+}
+li{               /** Have last names be bigger than first name **/
+    font-size: 10px;
+}
+
+
+/** Body Styling **/
+body {
+    display: grid;
+    height: 690px;
+    width: 1300px;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(5, 20%);
+    grid-template-areas:                /** grid temps for 5 columns **/
+        "header header header header"
+        "hero hero hero hero"
+        "main main main main"
+        "aside aside aside aside"
+        "footer footer footer footer";
+}
+
+/** Header Styling **/
+header{
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 100%; /** One column **/
+    padding-top: 515px;
+    padding-left: 545px;
+    width: 60%;
+    align-items: center;
+    align-content: center;
+}
+header > nav > menu {
+    margin-bottom: 0px;
+    display: grid;
+    list-style: none;
+    grid-template-columns: repeat(14, 1fr); /** have first names over last names **/
+}
+header > nav > menu + menu{
+    margin-top: 0px;  /** no margin **/
+}
+header > nav > menu > li > a{
+    font-size: 5px;
+    font-weight: lighter; /** make text thin **/
+}
+header > nav > menu + menu > li> a{
+    text-space: 1px;
+    height: 1px;
+    font-size: 10px;
+}
+
+
+
+/** Masthead Styling **/
+/** BATMAN BEGINS title **/
+.movie-title-mh {
+    grid-area: hero;
+    display: grid;
+    grid-template-columns: 33% 33% 33%; /** 3 columns **/
+    align-items: center;
+    height: 30px;
+    width: 500px;
+    padding-top: 440px;
+
+}
+.movie-title-mh > h1{
+padding-left: 300px;
+}
+.movie-title-mh > h2 {
+padding-left: 300px;
+}
+.movie-title-mh > h1,
+.movie-title-mh > h2 {
+    font-family: "Noto Sans Korean", sans-serif; /** "batman" lookin text **/
+    height: auto;
+    width: 800px;
+    text-align: center;
+    margin: -10px;
+    color: #eaeeeb;
+    font-size: 20px;
+    letter-spacing: 12px; /* Space between letters */
+    font-weight: bolder;
+
+}
+
+
+
+/** Main Styling **/
+main{
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%; /** 4 columns **/
+    padding-top: 73px;
+    height: 100px;
+    width: 800px;
+    padding-left: 100px;
+}
+main > section{
+    display: grid;
+    height: 10px;
+    padding-left: 508px;
+    padding-top: 280px;
+}
+main > section > a{
+
+    font-size: 1px;
+    width: 40px;
+    letter-spacing: 1px;
+}
+main > section > a > img{ /** DC Logo **/
+    width: 9px;
+    height: auto;
+}
+main > section + section{
+    padding-left: 343px;
+    padding-top: 282px;
+    display: grid;
+    width: 100px;
+}
+main > section + section > img{  /** PG-13 **/
+    height: 15px;
+    width: auto;
+    padding-bottom: 8px;
+}
+main > section + section + section{
+    padding-top: 270px;
+    padding-left: 70px;
+    display: grid;
+    width: 400px;
+    padding-bottom: 1px;
+    align-items: center;
+    align-content: center;
+    font-weight: lighter;
+}
+main > section + section + section > p{ /** the long body text for "credit" names **/
+    font-size: 4px;
+    color: #eaeeeb;
+    letter-spacing: 0;
+    margin: 0px;
+}
+main > section + section + section p small{
+    font-size: 2px;
+    letter-spacing: 0;
+}
+main section + section + section p a{
+    padding-left: 10px;
+    font-size: 3px;
+    letter-spacing: 0;
+}
+
+
+
+/** Aside Styling **/
+aside{                  /** Warner Bro's **/
+    grid-area: aside;
+    grid-template-columns: 50% 50%;
+    display: grid;
+    align-items: center;
+    align-content: center;
+    height: 100px;
+    width: 600px;
+    padding-left: 575px;
+    padding-top: 170px;
+}
+aside > section > h5{           /** name **/
+    padding-left: 212px;
+    width: 200px;
+    margin: 0;
+    color: #eaeeeb;
+    font-size: 2.5px;
+    font-weight: lighter;
+}
+aside > section > h5 + p{     /** little copyright **/
+    margin: 0;
+    padding-left: 213px;
+    width: 200px;
+    color: #eaeeeb;
+    font-size: 1.2px;
+}
+aside > article{
+    width: 100px;
+    height: auto;
+}
+aside > article > figure{
+    display: grid;
+    margin: 0;
+}
+aside > article > figure > img{ /** Warner Bro's Logo **/
+    padding-left: 24px;
+    padding-bottom: 5px;
+    height: auto;
+    width: 15px;
+}
+
+
+
+/** Footer Styling **/
+footer{
+    grid-area: footer;
+    display: grid;
+    align-items: center;
+    text-align: center;
+    padding-top: 83px;
+    padding-left: 670px;
+    height: 0px;
+    width: 200px;
+}
+footer > div > a{ /* link to trailer Styling (make it look like poster)*/
+    margin: 0;
+    cursor: pointer;
+    padding-top: 0px;
+    letter-spacing: 2px;  /* space between JUNE 17 */
+    font-size: 15px;
+    font-weight: bolder;
+    color: #e8b454;
+}
